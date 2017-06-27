@@ -1,4 +1,4 @@
-package fr.cesi.basecode.trainingtimer;
+package fr.cesi.basecode.fragment;
 
 import android.content.Intent;
 import android.os.Handler;
