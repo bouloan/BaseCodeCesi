@@ -6,7 +6,7 @@ import android.os.Bundle;
 import fr.cesi.basecode.R;
 
 
-public class timer extends AppCompatActivity {
+public class TimerActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

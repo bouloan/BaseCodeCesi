@@ -5,7 +5,7 @@
     android:orientation="vertical"
     android:gravity="center"
     android:background="@color/colorPrimaryDark"
-    tools:context="fr.cesi.basecode.fragment.choice">
+    tools:context="fr.cesi.basecode.fragment.ChoiceFragment">
 
     <Button
         android:id="@+id/button_choice_timer_choose_duration"
