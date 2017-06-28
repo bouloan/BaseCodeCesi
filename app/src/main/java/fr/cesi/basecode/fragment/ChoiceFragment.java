@@ -49,7 +49,9 @@ public class ChoiceFragment extends Fragment implements IPopableFragment {
         activity.appelWorkingFragment(_getDuration, _getPause, _getRepetition);
     }
 
-
+    private int _getDuration;
+    private int _getPause;
+    private int _getRepetition;
 
     @OnClick(R.id.button_choice_timer_duration)
     public void onClickDuration(){
@@ -63,8 +65,6 @@ public class ChoiceFragment extends Fragment implements IPopableFragment {
                     }
                 });
         hpb.show();
-
-
 
         }
 
@@ -98,9 +98,6 @@ public class ChoiceFragment extends Fragment implements IPopableFragment {
         npb.show();
     }
 
-    private int _getDuration;
-    private int _getPause;
-    private int _getRepetition;
 
     public ChoiceFragment() {
         // Required empty public constructor
