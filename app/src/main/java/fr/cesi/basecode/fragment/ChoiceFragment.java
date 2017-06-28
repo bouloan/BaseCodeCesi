@@ -49,9 +49,7 @@ public class ChoiceFragment extends Fragment implements IPopableFragment {
                 .setFragmentManager(getChildFragmentManager())
                 .setStyleResId(R.style.BetterPickersDialogFragment);
         tpb.show();
-        new onValidate(int value){
-            onClickDuration = int value
-        }
+
     }
 
     @OnClick(R.id.button_choice_timer_pause)
