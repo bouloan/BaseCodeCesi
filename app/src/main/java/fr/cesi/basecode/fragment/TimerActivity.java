@@ -10,8 +10,8 @@ import fr.cesi.base.controllers.fragment.IActivityListener;
 import fr.cesi.base.controllers.fragment.IPopableFragment;
 import fr.cesi.base.controllers.fragment.StackController;
 import fr.cesi.basecode.R;
-import fr.cesi.basecode.fragment.choice;
-import fr.cesi.basecode.fragment.working;
+import fr.cesi.basecode.fragment.ChoiceFragment;
+import fr.cesi.basecode.fragment.WorkingFragment;
 
 public class TimerActivity extends AbstractPopableActivity
         implements IActivityListener {
@@ -35,7 +35,7 @@ public class TimerActivity extends AbstractPopableActivity
 
         IPopableFragment current_stack_head = getStackController().head();
         if (current_stack_head == null) {
-            choice fragment = choice.newInstance();
+            ChoiceFragment fragment = ChoiceFragment.newInstance();
             getStackController().push(fragment);
         }
 
@@ -47,7 +47,7 @@ public class TimerActivity extends AbstractPopableActivity
     }
 
     public void appelTimerFragment(int duration, int duration_pause, int number_repetition) {
-        working fragment = working.newInstance(duration, duration_pause, number_repetition);
+        WorkingFragment fragment = WorkingFragment.newInstance(duration, duration_pause, number_repetition);
         getStackController().push(fragment);
     }
 }
