@@ -17,13 +17,13 @@ import fr.cesi.basecode.R;
  * create an instance of this fragment.
  */
 public class WorkingFragment extends Fragment implements IPopableFragment {
-    private static final String ARG_DURATION = "duration";
-    private static final String ARG_DURATION_PAUSE = "duration_pause";
-    private static final String ARG_NUMBER_REPETITION = "number_repetition";
+    private static final String ARG_DURATION = "getDuration";
+    private static final String ARG_DURATION_PAUSE = "getPause";
+    private static final String ARG_NUMBER_REPETITION = "getRepetition";
 
-    private int _duration;
-    private int _duration_pause;
-    private int _number_repetition;
+    private int _getDuration;
+    private int _getPause;
+    private int _getRepetition;
 
 
     public WorkingFragment() {
@@ -34,15 +34,15 @@ public class WorkingFragment extends Fragment implements IPopableFragment {
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
      *
-     * @return A new instance of fragment TimerFragment.
+     * @return A new instance of fragment WorkingFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static WorkingFragment newInstance(int duration, int duration_pause, int number_repetition) {
+    public static WorkingFragment newInstance(int getDuration, int getPause, int getRepetition) {
         WorkingFragment fragment = new WorkingFragment();
         Bundle args = new Bundle();
-        args.putInt(ARG_DURATION, duration);
-        args.putInt(ARG_DURATION_PAUSE, duration_pause);
-        args.putInt(ARG_NUMBER_REPETITION, number_repetition);
+        args.putInt(ARG_DURATION, getDuration);
+        args.putInt(ARG_DURATION_PAUSE, getPause);
+        args.putInt(ARG_NUMBER_REPETITION, getRepetition);
         fragment.setArguments(args);
         return fragment;
     }
@@ -51,9 +51,9 @@ public class WorkingFragment extends Fragment implements IPopableFragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            _duration = getArguments().getInt(ARG_DURATION);
-            _duration_pause = getArguments().getInt(ARG_DURATION_PAUSE);
-            _number_repetition = getArguments().getInt(ARG_NUMBER_REPETITION);
+            _getDuration = getArguments().getInt(ARG_DURATION);
+            _getPause = getArguments().getInt(ARG_DURATION_PAUSE);
+            _getRepetition = getArguments().getInt(ARG_NUMBER_REPETITION);
         }
     }
 
