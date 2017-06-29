@@ -164,7 +164,7 @@ public class WorkingFragment extends Fragment implements IPopableFragment {
         int remaining_seconds = (int) (remaining_duration / 1000);
 
         _counter.setText("" + remaining_seconds);
-        _repetitions.setText((_repetition - remaining_repetition) + "/" + _repetition);
+        _repetitions.setText((_repetition - remaining_repetition)+1 + "/" + _repetition);
 
         if (TYPE_DURATION.equals(_current_type)) {
             _start_image.setVisibility(View.VISIBLE);
