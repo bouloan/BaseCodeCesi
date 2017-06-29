@@ -23,9 +23,13 @@ public class SplashActivity extends AppCompatActivity {
             @Override
             public void run() {
                 startNextActivity();
+
+
             }
         }, 3000);
     }
+
+
 
     private void startNextActivity() {
         Intent intent = new Intent(this, TimerActivity.class);

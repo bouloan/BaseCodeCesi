@@ -20,10 +20,10 @@ import fr.cesi.basecode.R;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link working#newInstance} factory method to
+ * Use the {@link WorkingFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class working extends Fragment implements IPopableFragment {
+public class WorkingFragment extends Fragment implements IPopableFragment {
     private static final String ARG_DURATION = "getDuration";
     private static final String ARG_DURATION_PAUSE = "getPause";
     private static final String ARG_NUMBER_REPETITION = "getRepetition";
@@ -45,7 +45,7 @@ public class working extends Fragment implements IPopableFragment {
     private int _duration_pause_seconds;
 
 
-    public working() {
+    public WorkingFragment() {
         // Required empty public constructor
     }
 
@@ -53,11 +53,11 @@ public class working extends Fragment implements IPopableFragment {
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
      *
-     * @return A new instance of fragment TimerFragment.
+     * @return A new instance of fragment WorkingFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static working newInstance(int getDuration, int getPause, int getRepetition) {
-        working fragment = new working();
+    public static WorkingFragment newInstance(int getDuration, int getPause, int getRepetition) {
+        WorkingFragment fragment = new WorkingFragment();
         Bundle args = new Bundle();
         args.putInt(ARG_DURATION, getDuration);
         args.putInt(ARG_DURATION_PAUSE, getPause);

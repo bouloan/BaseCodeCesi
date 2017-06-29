@@ -47,7 +47,7 @@
         android:layout_width="match_parent"
         android:layout_height="350dp"
         android:background="@color/colorPrimaryDark"
-        tools:context="fr.cesi.basecode.fragment.working">
+        tools:context="fr.cesi.basecode.fragment.PauseFragment">
 
         <com.github.lzyzsd.circleprogress.DonutProgress
             android:id="@+id/donut_progress"

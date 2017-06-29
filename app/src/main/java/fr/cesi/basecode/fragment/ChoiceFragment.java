@@ -1,7 +1,6 @@
 package fr.cesi.basecode.fragment;
 
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -14,8 +13,6 @@ import com.codetroopers.betterpickers.hmspicker.HmsPickerBuilder;
 import com.codetroopers.betterpickers.hmspicker.HmsPickerDialogFragment;
 import com.codetroopers.betterpickers.numberpicker.NumberPickerBuilder;
 import com.codetroopers.betterpickers.numberpicker.NumberPickerDialogFragment;
-import com.codetroopers.betterpickers.radialtimepicker.RadialTimePickerDialogFragment;
-import com.codetroopers.betterpickers.timepicker.TimePickerBuilder;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
@@ -29,10 +26,10 @@ import fr.cesi.basecode.R;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link choice#newInstance} factory method to
+ * Use the {@link ChoiceFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class choice extends Fragment implements IPopableFragment {
+public class ChoiceFragment extends Fragment implements IPopableFragment {
 
     @BindView(R.id.button_choice_timer_duration)
     Button _button_duration;
@@ -49,7 +46,7 @@ public class choice extends Fragment implements IPopableFragment {
     @OnClick(R.id.button_choice_timer_start)
     public void onStartClicked() {
         TimerActivity activity = (TimerActivity) getActivity();
-        activity.appelworking(_getDuration, _getPause, _getRepetition);
+        activity.appelWorkingFragment(_getDuration, _getPause, _getRepetition);
     }
 
     private int _getDuration;
@@ -102,7 +99,7 @@ public class choice extends Fragment implements IPopableFragment {
     }
 
 
-    public choice() {
+    public ChoiceFragment() {
         // Required empty public constructor
     }
 
@@ -112,8 +109,8 @@ public class choice extends Fragment implements IPopableFragment {
      *
      * @return A new instance of fragment ChoiceTimerFragment.
      */
-    public static choice newInstance() {
-        choice fragment = new choice();
+    public static ChoiceFragment newInstance() {
+        ChoiceFragment fragment = new ChoiceFragment();
         return fragment;
     }
 
