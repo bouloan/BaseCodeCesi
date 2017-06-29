@@ -125,8 +125,6 @@ public class WorkingFragment extends Fragment implements IPopableFragment {
                 }
             }
         });
-
-
     }
 
     @Override

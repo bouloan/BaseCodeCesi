@@ -16,24 +16,29 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
-    signingConfigs {
-
-    }
-
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    signingConfigs {
+        release {
+            storeFile file("../cle.jks")
+            storePassword "anthony010780"
+            keyAlias "key0"
+            keyPassword "anthony010780"
+            v2SigningEnabled false
+        }
+    }
+
     productFlavors {
         main {
-
-
+            signingConfig signingConfigs.release
         }
 
         example {
-
+            signingConfig signingConfigs.release
             applicationIdSuffix ".example"
             versionNameSuffix "-example"
         }
