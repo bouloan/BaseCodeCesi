@@ -9,13 +9,17 @@ android {
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
     defaultConfig {
-        applicationId "fr.cesi.basecode"
+        applicationId "fr.cesi.training_timer_AP"
         minSdkVersion 14
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
+    signingConfigs {
+
+    }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -25,9 +29,11 @@ android {
     productFlavors {
         main {
 
+
         }
 
         example {
+
             applicationIdSuffix ".example"
             versionNameSuffix "-example"
         }

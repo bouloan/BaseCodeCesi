@@ -92,7 +92,7 @@ public class ChoiceFragment extends Fragment implements IPopableFragment {
                 .addNumberPickerDialogHandler(new NumberPickerDialogFragment.NumberPickerDialogHandlerV2() {
                     @Override
                     public void onDialogNumberSet(int reference, BigInteger number, double decimal, boolean isNegative, BigDecimal fullNumber) {
-                        _getRepetition = reference;
+                        _getRepetition = number.intValue();
                     }
                 });
         npb.show();

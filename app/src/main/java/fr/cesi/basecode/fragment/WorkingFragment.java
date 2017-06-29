@@ -28,14 +28,10 @@ public class WorkingFragment extends Fragment implements IPopableFragment {
     private static final String ARG_DURATION_PAUSE = "getPause";
     private static final String ARG_NUMBER_REPETITION = "getRepetition";
 
-    private int _getDuration;
-    private int _getPause;
-    private int _getRepetition;
-
     private Handler _handler;
     private int _duration;
     private int _duration_pause;
-
+    private int _repetition;
 
     private DonutProgress _working_progress;
     private DonutProgress _pause_progress;
@@ -76,7 +72,8 @@ public class WorkingFragment extends Fragment implements IPopableFragment {
         if (getArguments() != null) {
             _duration = getArguments().getInt(ARG_DURATION);
             _duration_pause = getArguments().getInt(ARG_DURATION_PAUSE);
-            _getRepetition = getArguments().getInt(ARG_NUMBER_REPETITION);
+            _repetition = getArguments().getInt(ARG_NUMBER_REPETITION);
+            Log.d("test", "onCreate: " + _repetition + "!");
 
             _duration_seconds = _duration;
             _duration_pause_seconds = _duration_pause;
@@ -158,6 +155,7 @@ public class WorkingFragment extends Fragment implements IPopableFragment {
 
 
     private void init() {
+        remaining_repetition = _repetition;
         remaining_duration = _duration;
         _current_type = TYPE_DURATION;
         postStartLoop();
@@ -168,9 +166,8 @@ public class WorkingFragment extends Fragment implements IPopableFragment {
         int remaining_seconds = (int) (remaining_duration / 1000);
 
         _counter.setText("" + remaining_seconds);
-        _repetitions.setText(remaining_repetition + "/" + _getRepetition);
+        _repetitions.setText((_repetition - remaining_repetition) + "/" + _repetition);
 
-        Log.d("test", "refreshUI: "+_current_type + " " + remaining_repetition);
         if (TYPE_DURATION.equals(_current_type)) {
             _start_image.setVisibility(View.VISIBLE);
             _working_progress.setVisibility(View.VISIBLE);
@@ -199,7 +196,7 @@ public class WorkingFragment extends Fragment implements IPopableFragment {
 
             if (remaining_duration <= 0) {
                 if (TYPE_DURATION.equals(_current_type)) {
-                    if (remaining_repetition > 0) {
+                    if (remaining_repetition > 1) {
                         remaining_repetition--;
                         _current_type = TYPE_DURATION_PAUSE;
                         remaining_duration = _duration_pause;
